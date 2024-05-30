@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Modo Claro/Oscuro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .dark-mode {
+            background-color: #343a40;
+            color: white;
+        }
+        .dark-mode table {
+            background-color: #454d55;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Mi Página</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button id="light-mode-btn" class="btn btn-primary mx-2">Modo Claro</button>
+                </li>
+                <li class="nav-item">
+                    <button id="dark-mode-btn" class="btn btn-secondary mx-2">Modo Oscuro</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1 id="page-title">Bienvenido a Mi Página</h1>
+        <img id="image" src="/raza-perro-alaskan-klee-kai-646c693637acc.jpeg" alt="Imagen de ejemplo" class="img-fluid my-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Juan</td>
+                    <td>Pérez</td>
+                    <td>juan@example.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>María</td>
+                    <td>Gómez</td>
+                    <td>maria@example.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Carlos</td>
+                    <td>López</td>
+                    <td>carlos@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#light-mode-btn').click(function(){
+                $('body').removeClass('dark-mode').addClass('bg-light');
+                $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
+                $('table').removeClass('table-dark').addClass('table-light');
+            });
+
+            $('#dark-mode-btn').click(function(){
+                $('body').removeClass('bg-light').addClass('dark-mode');
+                $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
+                $('table').removeClass('table-light').addClass('table-dark');
+            });
+        });
+    </script>
+</body>
+</html>
